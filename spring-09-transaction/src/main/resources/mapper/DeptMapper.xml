@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.release.mapper.DeptMapper">
+
+    <select id="selectDept" resultType="com.release.pojo.Dept">
+        select * from db01.dept;
+    </select>
+
+    <insert id="addDept" parameterType="com.release.pojo.Dept">
+        insert into db01.dept(deptno, dname, db_source) VALUES (#{deptno},#{dname},#{db_source})
+    </insert>
+
+    <delete id="deleteDept" parameterType="long">
+        delete from db01.dept where deptno = #{id}
+    </delete>
+</mapper>
